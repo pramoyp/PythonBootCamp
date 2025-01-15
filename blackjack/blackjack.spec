@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['C:\\Projects\\PythonBootCamp\\blackjack.py'],
+    ['blackjack.py'],
     pathex=[],
     binaries=[],
     datas=[],

@@ -44,7 +44,7 @@ def intial_deal():
     player_total = calculate_total(hand_player)
     print(f"Dealer's total is {dealer_total} + face down card.")
     print(f"Player's total is {player_total}.")
-    return random_card_dealer_1, random_card_dealer_2, random_card_player_1, random_card_player_2
+    return random_card_dealer_1, random_card_dealer_2, random_card_player_1, random_card_player_2, random_suit_dealer_2
 
 def deal(deck):
     suit = random.choice(list(deck.keys()))
@@ -53,7 +53,7 @@ def deal(deck):
     return suit, card
 
 
-def play(random_card_dealer_1, random_card_dealer_2, random_card_player_1, random_card_player_2):
+def play(random_card_dealer_1, random_card_dealer_2, random_card_player_1, random_card_player_2, random_suit_dealer_2):
     # Add code to play the game
     dealer_hand = [random_card_dealer_1, random_card_dealer_2]
     player_hand = [random_card_player_1, random_card_player_2]
@@ -79,6 +79,7 @@ def play(random_card_dealer_1, random_card_dealer_2, random_card_player_1, rando
            
         elif hit_or_stand == 's':
             # Add code to stand
+            print(f"The dealer's face down card is the {random_card_dealer_2} of {random_suit_dealer_2}.")
             print(f"The dealer's total is {dealer_total}.")
             while dealer_total < 17:
                 random_suit_dealer, random_card_dealer = deal(deck_copy)
@@ -111,8 +112,8 @@ def main():
         if start_game == 'y':
             reset_deck()
             print("Great! Let's play!")
-            random_card_dealer_1, random_card_dealer_2, random_card_player_1, random_card_player_2 = intial_deal()
-            play(random_card_dealer_1, random_card_dealer_2, random_card_player_1, random_card_player_2)
+            random_card_dealer_1, random_card_dealer_2, random_card_player_1, random_card_player_2, random_suit_dealer_2 = intial_deal()
+            play(random_card_dealer_1, random_card_dealer_2, random_card_player_1, random_card_player_2, random_suit_dealer_2)
             input("Press Enter to continue...")
 
 
